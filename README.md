@@ -1,3 +1,16 @@
+# YiQin Hao - Personal Academic Homepage
+
+This repository hosts the GitHub Pages site for `https://hyq718.github.io`.
+
+## Local Preview
+
+```bash
+bundle install
+bundle exec jekyll serve -l -H localhost
+```
+
+Then open `http://localhost:4000`.
+
 # Academic Pages
 **Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
 
