@@ -36,6 +36,8 @@ layout: default
         
         {% if page.collection == 'teaching' %}
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+        {% elsif page.collection == 'publications' and page.profile_owner %}
+          <p class="profile-publication-status">{{ page.venue }}{% if page.authors %}<br><span class="profile-paper__authors">{{ page.authors | escape }}</span>{% endif %}</p>
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}
@@ -85,7 +87,11 @@ layout: default
 
       {% if page.share %}{% include social-share.html %}{% endif %}
 
-      {% include post_pagination.html %}
+      {% if page.collection == 'publications' and page.profile_owner %}
+        <p><a href="{{ '/publications/' | relative_url }}">View all papers</a></p>
+      {% else %}
+        {% include post_pagination.html %}
+      {% endif %}
     </div>
 
     {% if site.comments.provider and page.comments %}

@@ -1,0 +1,17 @@
+{% assign profile_pubs = site.publications | where: "profile_owner", true | sort: "profile_order" %}
+<div class="profile-publications">
+{% for paper in profile_pubs %}
+  <article class="profile-paper">
+    <div class="profile-paper__heading">
+      <h3><a href="{{ paper.url | relative_url }}">{{ paper.title }}</a></h3>
+      <span class="profile-paper__status">{{ paper.venue }}</span>
+    </div>
+    {% if paper.authors %}<p class="profile-paper__authors">{{ paper.authors | escape }}</p>{% endif %}
+    <div class="profile-paper__summary">{{ paper.excerpt | markdownify }}</div>
+    {% if paper.result %}<p class="profile-paper__result"><strong>Results.</strong> {{ paper.result }}</p>{% endif %}
+    <p class="profile-paper__links">
+      <a href="{{ paper.url | relative_url }}">Overview</a>{% if paper.paperurl %} · <a href="{{ paper.paperurl }}">arXiv</a>{% endif %}{% if paper.codeurl %} · <a href="{{ paper.codeurl }}">Code</a>{% endif %}
+    </p>
+  </article>
+{% endfor %}
+</div>

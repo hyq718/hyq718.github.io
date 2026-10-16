@@ -1,24 +1,12 @@
 ---
 layout: archive
-title: "Publications"
+title: "Papers"
 permalink: /publications/
 author_profile: true
 ---
 
-{% include base_path %}
-{% assign profile_pubs = site.publications | where: "profile_owner", true | sort: "date" | reverse %}
+My work explores effective computational depth through adaptive computation, representation reuse, and parallel recurrent architectures.
 
-{% if profile_pubs.size > 0 %}
-{% for post in profile_pubs %}
-### [{{ post.title }}]({{ post.url | prepend: base_path }})
+{% include profile-publications.html %}
 
-**Authors:** {{ post.authors | default: "YiQin Hao" }}  
-**Venue/Status:** {{ post.venue }}{% if post.status %}; {{ post.status }}{% endif %}  
-{% if post.paperurl %}**Link:** [Paper]({{ post.paperurl }}){% endif %}
-
-{{ post.excerpt }}
-
-{% endfor %}
-{% else %}
-No publications added yet.
-{% endif %}
+<p class="profile-publications-note">* Equal contribution. ‡ Corresponding author.</p>

@@ -1,0 +1,16 @@
+/* Research and experience content; respects the theme's light/dark colors. */
+.profile-paper { margin: 0 0 1.75rem; padding: 0 0 1.5rem; border-bottom: 1px solid var(--global-border-color); }
+.profile-paper:last-child { padding-bottom: 0; border-bottom: 0; }
+.profile-paper__heading { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem 1.25rem; flex-wrap: wrap; }
+.page__content .profile-paper__heading h3 { margin: 0; font-size: 1.05em; line-height: 1.55; flex: 1 1 24rem; }
+.profile-paper__status { font-size: .72em; font-weight: 600; white-space: nowrap; padding: .15rem .5rem; border: 1px solid var(--global-border-color); border-radius: 3px; }
+.page__content .profile-paper__authors { font-size: .78em; line-height: 1.65; color: var(--global-text-color); margin: .6rem 0; }
+.page__content .profile-paper__summary p, .page__content .profile-paper__result { margin: .65rem 0; font-size: .92em; line-height: 1.7; }
+.page__content .profile-paper__links { margin: .65rem 0 0; font-size: .8em; }
+.profile-experience__heading { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem 1rem; flex-wrap: wrap; margin-bottom: .8rem; }
+.page__content .profile-experience__heading h3 { margin: 0; font-size: 1.05em; line-height: 1.6; }
+.profile-experience__heading span { font-size: .8em; }
+.profile-experience li { line-height: 1.7; margin-bottom: .65rem; font-size: .92em; }
+.profile-publications-note { font-size: .8em; }
+.profile-publication-status { line-height: 1.7; }
+@media (max-width: 600px) { .profile-paper__heading { gap: .35rem; } .profile-paper__heading h3 { flex-basis: 100%; } }

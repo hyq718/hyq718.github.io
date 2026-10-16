@@ -7,17 +7,33 @@ redirect_from:
   - /resume
 ---
 
-## Curriculum Vitae
-
-Download the latest CV here: [CV.pdf](/files/CV.pdf)
+[Download my current CV (Chinese PDF)]({{ '/files/CV.pdf' | relative_url }})
 
 ## Education
 
-- B.S. (Undergraduate), Shanghai Jiao Tong University (SJTU), China
+**Shanghai Jiao Tong University (SJTU)** — Undergraduate<br>
+September 2023 – Present · Shanghai, China
 
-## Research Areas
+## Research Interests
 
-- Pretraining Architectures
-- Latent Thought
-- Adaptive Computation
-- Large Language Models
+Deep learning and large language model pretraining architectures, with a focus on looped Transformers, effective computational depth, latent reasoning, and adaptive computation.
+
+## Experience
+
+{% include profile-experience.html %}
+
+## Papers
+
+{% assign profile_pubs = site.publications | where: "profile_owner", true | sort: "profile_order" %}
+{% for paper in profile_pubs %}
+- **[{{ paper.title }}]({{ paper.url | relative_url }})** — {{ paper.venue }}.
+{% endfor %}
+
+## Languages
+
+- English: CET-6, 646.
+- French: DELF B2.
+
+## Contact
+
+[hyq718@sjtu.edu.cn](mailto:hyq718@sjtu.edu.cn) · [haoyiqin718@gmail.com](mailto:haoyiqin718@gmail.com)
